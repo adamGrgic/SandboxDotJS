@@ -1,0 +1,7 @@
+*fem_index.txt*                           Front End Masters Documentation
+                                          ===============================
+
+Welcome to Front End Masters documentation !
+
+Courses:
+1. JavaScript: The Hard PartsV2 |JSTheHardPartsV2/notes.txt|
