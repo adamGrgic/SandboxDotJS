@@ -1,0 +1,11 @@
+link: https://frontendmasters.com/courses/deep-javascript-v3
+teacher: Kyle Simpson
+resources:
+Authority on JS
+https://262.ecma-international.org/9.0/index.html#Title
+
+Introduction:
+
+This course dives a bit deeper into some of the more technical nuances of
+JavaScript. Some examples include the actual source of truth on the tehcnical
+details of javascript (which is not MDN--its ECMAScript).

@@ -2,8 +2,6 @@ I. Introduction                                          *jshp_notes*
 II. Generalized Functions      ...........             | generalizedfunctions|
 
 
-
-
 ----------------
 | Introduction |
 ----------------
@@ -35,8 +33,6 @@ function multiplyBy2 (inputNumber) {
 
 * so far in memory we have:
 
-Memory
-======
 num : 3
 multiplyBy2 : f()
 
@@ -130,4 +126,87 @@ What is the syntax?
         of num and squares it , which eliminates our need for write individual
         squaring functions
 
+BEFORE:
 
+function TenSquared() {
+    return 10*10;
+}
+
+function NineSquared() {
+    return 9*9;
+}
+
+AFTER:
+- add parameter `num` which we multiply by itself to get the square
+function square(num) {
+    return num*num
+}
+
+square(10) = 100
+square (9) = 81
+
+-> much easier
+
+Repeating functionality
+-----------------------
+
+Instuctor more or less sums up the previous lessons about re using code and
+managing the thread of execution when we go into local versus global memory.
+
+Higher Order Functions
+----------------------
+
+More or less a continuation of the previous lesson with more nuanced examples.
+
+ex:
+
+function copyArrayAndManipulate(array, instructions) {
+    const output = [];
+
+    for (let i = 0; i < array.length; i++) {
+        output.push(instructions(array[i]));
+    }
+
+    return output;
+}
+
+function multiplyBy2(input) { return input * 2 }
+
+const result = copyArrayAndManipulate([1,2,3], multiplyBy2)
+
+
+The beauty of this logic is that we are not determining in our main execution
+context what type of rules will be applied to a bunch of numbers in an array.
+Instead, we are passing in a set of instructions to enact on the numbers in the
+array. Likewise, instead of multiplyBy2, we could do divideBy3 and pass that in
+as our instruction, which is pretty cool.
+
+
+Callbacks and Higher Order Functions
+------------------------------------
+
+Functions in javascript = first class objects
+They can co-exist with and can be treated like any other javascript object
+
+1. Assigned to variables and properties of objects
+2. Passed as arguments into functions
+3. Returned as values from functions
+
+(see above example of copyArrayAndManipulate)
+Higher order function - the outer function that takes in a function
+Callback - the function we insert
+
+
+Arrow functions
+---------------
+*shorthand way to save functions
+
+function multiplyBy2(input) {
+    return input*2
+}
+
+const multiplyBy2 = (input) => { return input*2}
+
+const multiplyBy2 = (input) => input*2
+
+const multiplyBy2 = input => input*2
